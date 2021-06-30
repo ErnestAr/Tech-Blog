@@ -1,18 +1,23 @@
 
-const editPost = async (e) => {
+const editPost =  async (e) => {
     let currentPost = e.currentTarget
     console.log(currentPost);
     const currentId = currentPost.getAttribute("id")
     console.log(currentId);
-    const response = await fetch(`/dashboard/form/${currentId}`, {
+    const response =  await fetch(`/dashboard/form/${currentId}`, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+           'Content-Type': 'application/json',
+           },
       });
       if (response.ok) {
-      } else {
-        alert('Failed to log in.');
+        console.log(response);
+        document.location.replace(`/dashboard/form/${currentId}/update`)
       }
+      
 }
+
+
 
 document.querySelector(".container")
 .addEventListener('click', editPost);

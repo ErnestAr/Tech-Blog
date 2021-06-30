@@ -9,5 +9,4 @@ router.use('/users', userRoutes);
 router.use('/posts', formRoutes);
 
 
-
 module.exports = router;

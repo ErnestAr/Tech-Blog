@@ -27,7 +27,7 @@ router.get('/', withAuth,  async (req, res) => {
     }
   });
 
-  router.get('/form', withAuth,  async (req, res) => {
+  router.get('/form',   async (req, res) => {
     try {
       res.render('addform', {});
     } catch (err) {
@@ -37,18 +37,33 @@ router.get('/', withAuth,  async (req, res) => {
   });
 
 
-  router.get('/form/:id', withAuth,  async (req, res) => {
+  router.get('/form/:id',   async (req, res) => {
     try {
       const PostData = await Post.findByPk(req.params.id);
-
       const post = PostData.get({ plain: true });
-
-      res.render('update-delete', { post, loggedIn: req.session.loggedIn });
+      res.status(200).json(post)
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
+
   });
+
+  router.get('/form/:id/update',   async (req, res) => {
+    try {
+      const PostData = await Post.findByPk(req.params.id);
+      const post = PostData.get({ plain: true });
+      res.status(200).render("update-delete", {
+        post
+      })
+
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+
+  });
+
 
 
 

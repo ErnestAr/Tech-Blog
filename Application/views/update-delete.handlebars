@@ -1,19 +1,19 @@
 
-    <h2 class="page-title">Add Post</h2>
-    <form class="form createform">
-      <div class="form-group">
+    <h2 class="page-title">Edit</h2>
+    <form class="form createform" >
+      <div class="form-group" id="{{post.id}}" >
         <label for="title">Title</label>
-        <input class="form-input" type="text" placeholder={{post.title}} id="title" />
+        <input class="form-input" type="text" placeholder="{{post.title}}" id="title" />
       </div>
       <div class="form-group">
         <label for="content">Content</label>
-        <input class="form-input" type="text" id="content" placeholder={{post.content}} />
+        <input class="form-input" type="text" id="content" placeholder="{{post.content}}" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="update">Update</button>
+        <button class="btn updatebtn" type="submit" >Update</button>
       </div>
             <div class="form-group">
-        <button class="btn btn-primary" type="delete">Delete</button>
+        <button class="btn deletebtn" type="submit">Delete</button>
       </div>
     </form>
     <script src="/js/formedit.js"></script>

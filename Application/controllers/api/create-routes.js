@@ -22,14 +22,15 @@ router.post('/', async (req, res) => {
   
 router.put('/:id', async (req, res) => {
     // update a Post by its `id` value
-
     try {
-      const postData = await Post.update(req.body, {
-        where: {
-          id: req.params.id,
-        },
-      })
-      res.status(200).json(PostData);
+      const postData = await Post.update( 
+        { 
+          title: req.body.title,
+          content: req.body.content
+    },
+        { where: {id: req.params.id  } }
+      )
+      res.status(200).json(postData);
     } catch (error) {
       res.status(400).json(error);
     }

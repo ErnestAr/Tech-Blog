@@ -1008,7 +1008,7 @@ a:hover {
   text-align: center;
 }
 
-.btn.btn-primary {
+.btn.btn-primary, .btn.deletebtn, .btn.updatebtn {
   background-color: #2d3e50;
   color: #d9e9e8;
 }
