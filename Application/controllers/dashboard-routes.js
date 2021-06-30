@@ -19,7 +19,31 @@ router.get('/', withAuth,  async (req, res) => {
       res.render('dashboard', {
         posts,
         loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id,
       });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+  router.get('/form', withAuth,  async (req, res) => {
+    try {
+      res.render('addform', {});
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+  router.get('/form/:id', withAuth,  async (req, res) => {
+    try {
+      const PostData = await Post.findByPk(req.params.id);
+
+      const post = PostData.get({ plain: true });
+
+      res.render('update-delete', { post, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

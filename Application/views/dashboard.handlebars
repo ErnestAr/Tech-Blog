@@ -1,1 +1,18 @@
-<h3>this is dashboard</h3>
+
+{{#each posts as |post|}}
+    <section class="container" id={{post.id}}>
+        <div class="title">
+            <h2 class="top-header" style= "display: inline" >{{post.title}}</h2>
+            <h5 class = "user" >Posted by {{user.username}} on {{post.createdAt}}</h5>
+        </div>
+        <div>
+            <h4 class= "text">{{post.content}}</h4>
+        </div>
+    </section>
+{{/each}}
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit"> <a href="/dashboard/form">Add New</a></button>
+    </div>
+    <script src="/js/dashboard.js"></script>
+
+

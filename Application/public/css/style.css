@@ -58,12 +58,12 @@ nav a:hover {
   background-color: var(--secondary);
 }
 
-.gallery {
+.posts {
   flex: 4;
   background-color: #fff;
   padding: 50px;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
 }
@@ -168,3 +168,5 @@ img {
   margin-left: 20px
   
 }
+
+
