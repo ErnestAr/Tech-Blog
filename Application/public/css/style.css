@@ -149,6 +149,14 @@ img {
   color: white
   
 }
+.title1 {
+  background-color: grey;
+  position: relative;
+  margin: 0px;
+  color: white
+  
+}
+
 
 .user {
   display: inline;
@@ -162,6 +170,8 @@ img {
 .top-header {
   margin-left: 20px
 }
+
+
 .text {
   margin: 5px;
   height:fit-content;

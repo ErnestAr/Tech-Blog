@@ -1,9 +1,9 @@
 
 {{#each posts as |post|}}
     <section class="container" id={{post.id}}>
-        <div class="title">
+        <div class="title1">
             <h2 class="top-header" style= "display: inline" >{{post.title}}</h2>
-            <h5 class = "user" >Posted by {{user.username}} on {{post.createdAt}}</h5>
+            <h5 class = "user" >Posted on {{post.createdAt}}</h5>
         </div>
         <div>
             <h4 class= "text">{{post.content}}</h4>
