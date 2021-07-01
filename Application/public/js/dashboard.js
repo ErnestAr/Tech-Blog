@@ -1,4 +1,4 @@
-
+const contelements = document.getElementsByClassName("container");
 const editPost =  async (e) => {
     let currentPost = e.currentTarget
     console.log(currentPost);
@@ -17,9 +17,9 @@ const editPost =  async (e) => {
       
 }
 
+for (let i = 0; i < contelements.length; i++) {
+  contelements[i].addEventListener('click', editPost, false);
+}
 
-
-document.querySelector(".container")
-.addEventListener('click', editPost);
 
 
